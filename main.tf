@@ -13,13 +13,8 @@ provider "aws" {
   region = "ap-northeast-1"
 }
 
-#リソースタイプ+リソース名
-resource "aws_instance" "app_server" {
-  ami           = "ami-0b069de314c9ab4c4"
-  instance_type = "t2.micro"
+# 自分のパブリックIP取得用
+provider "http" {}
 
-  tags = {
-    Name = var.instance_name
-  }
-}
+
 
